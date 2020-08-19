@@ -1,3 +1,7 @@
+'''
+    This file contains a class for creating OVAL graph from XML source
+'''
+
 import sys
 import os
 

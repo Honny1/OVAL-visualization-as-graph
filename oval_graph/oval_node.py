@@ -1,15 +1,10 @@
 '''
-    Modules form my lib and for create ID
+    This file contains a OvalNode class, which is one node of OVAL tree
 '''
+
 import uuid
 
 import oval_graph.evaluate
-
-
-'''
-    This module contains methods and classes for
-    constructing and controlling an oval tree.
-'''
 
 
 class OvalNode():
@@ -30,7 +25,7 @@ class OvalNode():
     '''
 
     def __init__(self, **kwargs):
-        """
+        '''
         Note:
             This metode construct OvalNode and validate values of parameteres.
 
@@ -46,7 +41,7 @@ class OvalNode():
             OVAL definition or XCCDF rule (empty eq None)
             test_result_details (dict|None): information about test (empty eq None)
             children ([OvalNode]): array of children of node (empty eq empty array)
-        """
+        '''
         try:
             self.node_id = kwargs['node_id']
             self.node_type = self._validate_type(kwargs['node_type'])

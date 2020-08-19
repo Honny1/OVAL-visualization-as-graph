@@ -1,3 +1,7 @@
+'''
+    This file contains a class for command json-to-graph
+'''
+
 import json
 
 from .client import Client

@@ -1,3 +1,7 @@
+'''
+    This file contains a class for command arf-to-graph
+'''
+
 from .client import Client
 from .converter import Converter
 from ._builder_html_graph import BuilderHtmlGraph

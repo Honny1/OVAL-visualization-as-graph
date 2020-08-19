@@ -1,3 +1,7 @@
+'''
+    This file contains a parent class for commands
+'''
+
 import re
 import argparse
 import tempfile

@@ -1,3 +1,7 @@
+'''
+    This file contains class for building OVAL graph
+'''
+
 import uuid
 
 from .oval_node import OvalNode

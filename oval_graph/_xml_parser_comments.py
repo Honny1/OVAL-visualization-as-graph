@@ -1,3 +1,7 @@
+'''
+    This file contains a class for processing comments from XML
+'''
+
 ns = {
     'oval-definitions': 'http://oval.mitre.org/XMLSchema/oval-definitions-5',
 }

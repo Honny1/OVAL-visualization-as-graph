@@ -1,3 +1,7 @@
+'''
+    This file contains class for building HTML graph
+'''
+
 import os
 import json
 import re

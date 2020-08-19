@@ -1,3 +1,7 @@
+'''
+    This file contains a class for command arf-to-json
+'''
+
 import json
 import os
 

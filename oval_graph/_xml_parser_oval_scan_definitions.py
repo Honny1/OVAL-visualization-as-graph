@@ -1,3 +1,7 @@
+'''
+    This file contains a class for processing scan definition from XML
+'''
+
 from ._xml_parser_comments import _XmlParserComments
 from ._xml_parser_test_info import _XmlParserTestInfo
 

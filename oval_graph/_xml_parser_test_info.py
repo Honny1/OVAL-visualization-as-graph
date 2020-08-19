@@ -1,3 +1,7 @@
+'''
+    This file contains a class for processing tests info from XML
+'''
+
 import uuid
 
 ns = {
