@@ -8,7 +8,7 @@ import os
 from lxml import etree as ET
 
 from ._xml_parser_oval_scan_definitions import _XmlParserScanDefinitions
-from ._builder_oval_graph import _BuilderOvalGraph
+from ._builder_oval_tree import _BuilderOvalTree
 from .exceptions import NotChecked
 
 ns = {
@@ -136,5 +136,5 @@ class XmlParser:
             raise ValueError('404 rule "{}" not found!'.format(rule_id))
 
     def get_oval_tree(self, rule_id):
-        return _BuilderOvalGraph.get_oval_graph_from_dict_of_rule(
+        return _BuilderOvalTree.get_oval_tree_from_dict_of_rule(
             self._get_definition_of_rule(rule_id))
