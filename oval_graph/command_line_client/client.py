@@ -159,14 +159,7 @@ class Client():
             default=False,
             help="Show notselected rules. These rules will not be visualized.")
 
-    def prepare_parser(self):
-        self.parser = argparse.ArgumentParser(
-            prog='oval-graph',
-            description=self._get_message().get('description'))
-        self.parser.add_argument(
-            '--version',
-            action='version',
-            version='%(prog)s ' + __version__)
+    def prepare_args_options_all_hide_passing_tests(self):
         self.parser.add_argument(
             '-a',
             '--all',
@@ -180,6 +173,28 @@ class Client():
             help=(
                 "Do not display passing tests for better orientation in"
                 " graphs that contain a large amount of nodes."))
+
+    def prepare_args_source_file(self):
+        self.parser.add_argument(
+            "source_filename",
+            help=self._get_message().get('source_filename'))
+
+    def prepare_args_rule_id(self):
+        self.parser.add_argument(
+            "rule_id", help=(
+                "Rule ID to be visualized. A part from the full rule ID"
+                " a part of the ID or a regular expression can be used."
+                " If brackets are used in the regular expression "
+                "the regular expression must be quoted."))
+
+    def prepare_args_basic_functions(self):
+        self.parser = argparse.ArgumentParser(
+            prog='oval-graph',
+            description=self._get_message().get('description'))
+        self.parser.add_argument(
+            '--version',
+            action='version',
+            version='%(prog)s ' + __version__)
         self.parser.add_argument(
             '-v',
             '--verbose',
@@ -192,12 +207,9 @@ class Client():
             action="store",
             default=None,
             help='The file where to save output.')
-        self.parser.add_argument(
-            "source_filename",
-            help=self._get_message().get('source_filename'))
-        self.parser.add_argument(
-            "rule_id", help=(
-                "Rule ID to be visualized. A part from the full rule ID"
-                " a part of the ID or a regular expression can be used."
-                " If brackets are used in the regular expression "
-                "the regular expression must be quoted."))
+
+    def prepare_parser(self):
+        self.prepare_args_basic_functions()
+        self.prepare_args_options_all_hide_passing_tests()
+        self.prepare_args_source_file()
+        self.prepare_args_rule_id()

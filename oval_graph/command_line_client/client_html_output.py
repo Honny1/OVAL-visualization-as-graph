@@ -17,7 +17,8 @@ class ClientHtmlOutput(Client):
         self.all_in_one = self.arg.all_in_one
         self.all_rules = True if self.all_in_one else self.arg.all
         self.display_html = True if self.out is None else self.arg.display
-        self.html_builder = BuilderHtmlGraph(self.parts, self.verbose, self.all_in_one)
+        self.html_builder = BuilderHtmlGraph(
+            self.parts, self.verbose, self.all_in_one)
         self.web_browsers = []
 
     @staticmethod
@@ -88,13 +89,15 @@ class ClientHtmlOutput(Client):
         for web_browser in self.web_browsers:
             web_browser.kill()
 
-    def prepare_args_when_output_is_html(self):
+    def prepare_args_all_in_one(self):
         self.parser.add_argument(
             '-i',
             '--all-in-one',
             action="store_true",
             default=False,
             help="Processes all rules into one file.")
+
+    def prepare_args_display(self):
         self.parser.add_argument(
             '-d',
             '--display',

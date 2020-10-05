@@ -39,4 +39,5 @@ class JsonToHtml(ClientHtmlOutput, ClientJsonInput):
 
     def prepare_parser(self):
         super().prepare_parser()
-        self.prepare_args_when_output_is_html()
+        self.prepare_args_all_in_one()
+        self.prepare_args_display()
