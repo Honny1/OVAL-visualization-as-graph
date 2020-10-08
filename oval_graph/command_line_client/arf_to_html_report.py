@@ -13,6 +13,8 @@ class ArfToHtmlReport(Client):
         self.xml_parser = XmlParser(self.source_filename)
         self.rule_name = '.'
         self.isatty = False
+        self.show_failed_rules = False
+        self.show_not_selected_rules = False
 
     def _get_message(self):
         return {
