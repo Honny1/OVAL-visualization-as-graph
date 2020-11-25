@@ -69,6 +69,24 @@ def test_prepare_graph_with_not_selected_rule():
     try_expection_for_prepare_graph(src, rule, 'not selected')
 
 
+def try_expection_for_search_rule_id(src, rule, err):
+    client = get_client_arf_to_json(src, rule)
+    with pytest.raises(Exception, match=err):
+        assert client.search_rules_id()
+
+
+def test_search_non_existent_rule():
+    src = 'test_data/ssg-fedora-ds-arf.xml'
+    rule = 'non-existent_rule'
+    try_expection_for_search_rule_id(src, rule, '404')
+
+
+def test_search_rule_id_not_selected_rule():
+    src = 'test_data/ssg-fedora-ds-arf.xml'
+    rule = 'xccdf_org.ssgproject.content_rule_package_nis_removed'
+    try_expection_for_search_rule_id(src, rule, 'not selected')
+
+
 def test_prepare_json(capsys):
     src = 'test_data/ssg-fedora-ds-arf.xml'
     rule = 'xccdf_org.ssgproject.content_rule_package_abrt_removed'
@@ -295,7 +313,7 @@ def test_get_wanted_not_selected_rules_from_array_of_IDs():
         client.xml_parser.notselected_rules)
 
 
-def test_get_wanted_rules_from_array_of_IDs():
+def test_get_wanted_rules_from_array_of_ids():
     src = 'test_data/ssg-fedora-ds-arf.xml'
     regex = r'_package_\w+_removed'
     client = get_client_arf_to_json(src, regex)
