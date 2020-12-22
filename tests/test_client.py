@@ -1,14 +1,11 @@
 import re
-import json
-import mock
 import sys
-import os
-import tempfile
 
+import mock
 import pytest
 
-from oval_graph.client import Client
 import tests.any_test_help
+from oval_graph.client import Client
 
 
 def get_client(src, rule):

@@ -1,10 +1,11 @@
-import pytest
-import tempfile
 import os
+import tempfile
 import uuid
 
-from oval_graph.json_to_html import JsonToHtml
+import pytest
+
 import tests.any_test_help
+from oval_graph.json_to_html import JsonToHtml
 
 
 def get_client_json_to_html(src, rule):

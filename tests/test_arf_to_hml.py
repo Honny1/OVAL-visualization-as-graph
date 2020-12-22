@@ -1,12 +1,13 @@
-import pytest
-import tempfile
 import os
-import uuid
-import mock
 import sys
+import tempfile
+import uuid
 
-from oval_graph.arf_to_html import ArfToHtml
+import mock
+import pytest
+
 import tests.any_test_help
+from oval_graph.arf_to_html import ArfToHtml
 
 
 def get_client_arf_to_html(src, rule):

@@ -1,15 +1,15 @@
-import pytest
-import tempfile
-import os
-import uuid
 import json
-import mock
+import os
 import sys
-from datetime import datetime
+import tempfile
 import time
+import uuid
 
-from oval_graph.arf_to_json import ArfToJson
+import mock
+import pytest
+
 import tests.any_test_help
+from oval_graph.arf_to_json import ArfToJson
 
 
 def get_client_arf_to_json(src, rule):
