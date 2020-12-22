@@ -1,15 +1,15 @@
-import re
 import argparse
-import tempfile
 import os
-import webbrowser
+import re
 import subprocess
-from datetime import datetime
 import sys
+import tempfile
+import webbrowser
+from datetime import datetime
 
-from .xml_parser import XmlParser
-from .exceptions import NotChecked
 from .__init__ import __version__
+from .exceptions import NotChecked
+from .xml_parser import XmlParser
 
 
 class Client():

@@ -1,10 +1,10 @@
 import json
 
+from ._builder_html_graph import BuilderHtmlGraph
 from .client import Client
-from .oval_node import restore_dict_to_tree
 from .converter import Converter
 from .exceptions import NotChecked
-from ._builder_html_graph import BuilderHtmlGraph
+from .oval_node import restore_dict_to_tree
 
 
 class JsonToHtml(Client):

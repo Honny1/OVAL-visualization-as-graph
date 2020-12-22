@@ -1,6 +1,6 @@
+from ._builder_html_graph import BuilderHtmlGraph
 from .client import Client
 from .converter import Converter
-from ._builder_html_graph import BuilderHtmlGraph
 from .xml_parser import XmlParser
 
 
