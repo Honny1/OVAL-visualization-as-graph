@@ -52,7 +52,7 @@ class JsonToHtml(Client):
         return self.json_data_file.keys()
 
     def search_rules_id(self):
-        rules = self._get_wanted_rules_from_array_of_IDs(
+        rules = self._get_wanted_rules(
             self.load_rule_names())
         notselected_rules = []
         return self._check_rules_id(rules, notselected_rules)
