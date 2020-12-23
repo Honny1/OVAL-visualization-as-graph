@@ -21,12 +21,6 @@ class ClientHtmlOutput(Client):
         self.web_browsers = []
 
     @staticmethod
-    def print_red_text(text):
-        start_red_color = '\033[91m'
-        end_red_color = '\033[0m'
-        print(start_red_color + str(text) + end_red_color)
-
-    @staticmethod
     def get_src(src):
         _dir = os.path.dirname(os.path.realpath(__file__))
         return str(os.path.join(_dir, src))
@@ -51,7 +45,9 @@ class ClientHtmlOutput(Client):
                     )
                     dict_oval_trees = {}
             except NotChecked as error:
-                self.print_red_text(error)
+                start_red_color = '\033[91m'
+                end_red_color = '\033[0m'
+                print(start_red_color + str(error) + end_red_color)
         if self.all_in_one:
             self._build_and_save_html(
                 dict_oval_trees, self.get_save_src(
